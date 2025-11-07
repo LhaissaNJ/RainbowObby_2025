@@ -1,4 +1,4 @@
-# 🌈 Projet VR Obby – Prototype de jeu de parcours
+# 🌈 RainbowObby – Prototype de jeu de parcours en VR
 
 Bienvenue dans **Rainbow Obby**, un projet de jeu de parcours en réalité virtuelle où le joueur traverse des étapes pleines de surprises, de défis et de couleurs.  Pensé pour le **Meta Quest 3**, ce prototype mélange plateforme et précision dans un univers immersif et fun.
 
