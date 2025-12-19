@@ -1,41 +1,49 @@
-// using UnityEngine;
-// using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
-// public class Parcours3 : MonoBehaviour
-// {
-//     [Header("UIs et Feedbacks")]
-//     public GameObject imageExplication; 
+public class Parcours6 : MonoBehaviour
+{
+    [Header("UIs et Feedbacks")]
+    // public GameObject imageExplication; 
 
-//     [Header("Objets à faire disparaître")]
-//     public GameObject murDisparaitre; 
-//     public GameObject[] soclesAFaireDisparaitre; 
+    [Header("Cible et Condition")]
+    public string nomDeLaPieceAttendue = "BonnePiece"; 
 
-//     private bool socleCorrect = false;
+    [Header("Objets à faire disparaître")]
+    public GameObject murDisparaitre; 
+    public GameObject socleAFaireDisparaitre; 
+
+    private bool socleCorrect = false;
+    private GameObject pieceRef;
 
 
-//     void Start()
-//     {
+    public void OnSocleSelect(SelectEnterEventArgs args)
+    {
+        if (args.interactableObject.transform.name.Contains(nomDeLaPieceAttendue))
+        {
+            socleCorrect = true;
+            pieceRef = args.interactableObject.transform.gameObject;
+            
+            VerifierPuzzle();
+        }
+    }
 
-//     }
+    public void OnSocleExit(SelectExitEventArgs args) 
+    { 
+        if (args.interactableObject.transform.name.Contains(nomDeLaPieceAttendue))
+        {
+            socleCorrect = false; 
+            pieceRef = null;
+        }
+    }
 
-//     public void OnSocle1Select(SelectEnterEventArgs args)
-//     {
-//         if (args.interactableObject.transform.name.Contains("Piece1"))
-//         {
-//             socle1Correct = true;
-//             piece1Ref = args.interactableObject.transform.gameObject;
-//             MettreAJourAffichage();
-//             VerifierPuzzle();
-//         }
-//     }
-
-//     public void OnSocle1Exit(SelectExitEventArgs args) 
-//     { 
-//         if (args.interactableObject.transform.name.Contains("Piece1"))
-//         {
-//             socle1Correct = false; 
-//             piece1Ref = null;
-//             MettreAJourAffichage();
-//         }
-//     }
-// }
+    private void VerifierPuzzle()
+    {
+        if (socleCorrect)
+        {
+            if (murDisparaitre != null) murDisparaitre.SetActive(false);
+            if (pieceRef != null) pieceRef.SetActive(false);
+            if (socleAFaireDisparaitre != null) socleAFaireDisparaitre.SetActive(false);
+        }
+    }
+}
