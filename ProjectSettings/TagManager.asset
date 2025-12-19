@@ -5,8 +5,11 @@ TagManager:
   serializedVersion: 3
   tags:
   - Checkpoint
-  - Lave
   - Balle
+  - solLave
+  - Cible
+  - Plancher
+  - Joueur
   layers:
   - Default
   - TransparentFX
