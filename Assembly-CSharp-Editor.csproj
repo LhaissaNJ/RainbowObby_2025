@@ -48,7 +48,21 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.2.6f2\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Décor\Skybox\!Core\Scripts\Editor\RateMeDialog.cs" />
+    <Compile Include="Assets\Décor\Skybox\Low Poly\Scripts\Controllers\Editor\SkyboxControllerEditor.cs" />
+    <Compile Include="Assets\Décor\Skybox\Low Poly\Scripts\DotParams\Editor\CelestialParamDrawer.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Editor\ReadmeEditor.cs" />
+    <Compile Include="Assets\Décor\Skybox\Low Poly\Scripts\DotParams\Editor\SkyParamDrawer.cs" />
+    <Compile Include="Assets\Décor\Skybox\!Core\Scripts\Editor\FarlandSkiesEditorUtility.cs" />
+    <Compile Include="Assets\Décor\Skybox\Low Poly\Scripts\Controllers\Editor\SkyboxControllerPresets.cs" />
+    <Compile Include="Assets\Décor\Skybox\!Core\Scripts\DotParams\Editor\BaseParamDrawer.cs" />
+    <Compile Include="Assets\Décor\Skybox\!Core\Scripts\Editor\FarlandSkiesPreferences.cs" />
+    <Compile Include="Assets\Décor\Skybox\Low Poly\Scripts\DotParams\Editor\StarsParamDrawer.cs" />
+    <Compile Include="Assets\Décor\Skybox\!Core\Scripts\Editor\ParamsReorderableList.cs" />
+    <Compile Include="Assets\Décor\Skybox\Low Poly\Scripts\Info\Editor\AssetInfo.cs" />
+    <Compile Include="Assets\Décor\Skybox\Low Poly\Scripts\Controllers\Editor\SkyboxDayNightCycleEditor.cs" />
+    <Compile Include="Assets\Décor\Skybox\Low Poly\Shaders\Editor\LowPolyShaderGUI.cs" />
+    <Compile Include="Assets\Décor\Skybox\Low Poly\Scripts\DotParams\Editor\CloudsParamDrawer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -1424,11 +1438,11 @@
     <ProjectReference Include="Assembly-CSharp.csproj" />
     <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.InteractionSimulator.Editor.csproj" />
     <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.Hands.Editor.csproj" />
+    <ProjectReference Include="Unity.XR.Hands.Samples.VisualizerSample.csproj" />
     <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.SpatialKeyboard.csproj" />
     <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.WorldSpaceUI.csproj" />
     <ProjectReference Include="Unity.XR.Hands.Samples.Gestures.Editor.csproj" />
     <ProjectReference Include="ControllerSample.csproj" />
-    <ProjectReference Include="Unity.XR.Hands.Samples.VisualizerSample.csproj" />
     <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.InteractionSimulator.csproj" />
     <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj" />
     <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.SpatialKeyboard.Editor.csproj" />

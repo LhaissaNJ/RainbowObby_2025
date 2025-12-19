@@ -5,4 +5,9 @@ Bienvenue dans **Rainbow Obby**, un projet de jeu de parcours en réalité virtu
 - Des casses-têtes à résoudre
 - Des énigmes qui demandent un peu de logique
 - Du lancer sur des cibles 
-- Des obstacles physiques à franchir (sauts, escalade, esquives)
+- Des obstacles physiques à franchir (sauts et esquives)
+
+Présentation de l'équipe :
+- Lhaissa, gestion des codes pour les parcours 2, 3, 6, 7, 8 et du gameplay général (checkpoints)
+- Azpen, création de tous les matériau pour chaque objets du jeu et du parcours 5 ainsi que les énigmes 
+- Lina, création de map entière du jeu ainsi que ses composants 
