@@ -1438,11 +1438,11 @@
     <ProjectReference Include="Assembly-CSharp.csproj" />
     <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.InteractionSimulator.Editor.csproj" />
     <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.Hands.Editor.csproj" />
+    <ProjectReference Include="Unity.XR.Hands.Samples.VisualizerSample.csproj" />
     <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.SpatialKeyboard.csproj" />
     <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.WorldSpaceUI.csproj" />
     <ProjectReference Include="Unity.XR.Hands.Samples.Gestures.Editor.csproj" />
     <ProjectReference Include="ControllerSample.csproj" />
-    <ProjectReference Include="Unity.XR.Hands.Samples.VisualizerSample.csproj" />
     <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.InteractionSimulator.csproj" />
     <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj" />
     <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.SpatialKeyboard.Editor.csproj" />

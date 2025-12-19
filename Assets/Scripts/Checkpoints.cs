@@ -3,73 +3,87 @@ using UnityEngine;
 public class Checkpoints : MonoBehaviour
 {
     [Header("Paramètres de Respawn")]
-    [SerializeField] private Vector3 lastCheckpointPos;
-    [SerializeField] private Minuteur minuteur;
+    public Vector3 lastCheckpointPos;
+    public Minuteur minuteur;
+
+    [Header("Apparence et Son")]
+    public Material greenMaterial; 
+
     private CharacterController controller;
+    private Rigidbody rb;
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
-        lastCheckpointPos = transform.position;
-    }
-
-    public void Respawn()
-    {
-        BougerPerso(lastCheckpointPos);
+        rb = GetComponent<Rigidbody>();
+        lastCheckpointPos = transform.position; 
+        Debug.Log("Script Checkpoint initialisé sur : " + gameObject.name);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        // DEBUG : Affiche le nom de tout ce que tu touches
-        Debug.Log("Collision avec : " + other.name + " | Tag : " + other.tag);
+        // DEBUG : Affiche TOUT ce que la balle touche
+        Debug.Log("Collision détectée avec : " + other.name + " | Tag : " + other.tag);
 
-        if (other.name == "Téléporteur1")
+        // 1. DETECTION DE LA LAVE
+        if (other.CompareTag("solLave"))
         {
-            minuteur.Debuter();
+            Debug.Log("Lave touchée ! Respawn...");
+            Respawn();
+            return;
         }
 
-        if (other.name == "PlateFormeFinale")
-        {
-            minuteur.Stop();
-        }
-
+        // 2. DETECTION DES CHECKPOINTS
         if (other.CompareTag("Checkpoint"))
         {
-            // ATTENTION : Si le pivot du checkpoint est au sol, 
-            // tu seras TP à moitié dans le sol.
+            // On sauvegarde la position
             lastCheckpointPos = other.transform.position;
-            Debug.Log("Nouveau Checkpoint sauvegardé !");
-        }
+            Debug.Log("POSITION SAUVEGARDÉE : " + lastCheckpointPos);
 
-        // C'EST ICI QUE ÇA BLOQUE PROBABLEMENT
-        if (other.CompareTag("Lave") || other.name == "SolLave")
-        {
-            Debug.Log("MORT : Touché la lave (" + other.name + ")");
-            Respawn();
-        }
-    }
+            // Changement de couleur
+            Renderer rend = other.GetComponent<Renderer>();
+            if (rend != null && greenMaterial != null)
+            {
+                rend.material = greenMaterial;
+                Debug.Log("Couleur changée en VERT pour " + other.name);
+            }
 
-    public void Teleportation(Transform cible)
-    {
-        if (controller != null)
-        {
-            controller.enabled = false;
-            transform.position = cible.position;
-            transform.rotation = cible.rotation;
-            Physics.SyncTransforms(); // Force la mise à jour physique
-            controller.enabled = true;
+            // Son
+            AudioSource audio = other.GetComponent<AudioSource>();
+            if (audio != null) audio.Play();
+
+            // Gestion du minuteur
+            if (other.name == "Téléporteur1" && minuteur != null) minuteur.Debuter();
+            if (other.name == "PlateFormeFinale" && minuteur != null) minuteur.Stop();
         }
     }
 
-    private void BougerPerso(Vector3 targetPosition)
+    public void Respawn()
     {
-        if (controller != null)
+        // On réinitialise la physique avant le déplacement
+        if (rb != null)
         {
-            controller.enabled = false;
-            // On ajoute un petit offset vertical (0.5m) pour ne pas être coincé dans le sol
-            transform.position = targetPosition + Vector3.up * 0.5f;
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
+
+        // Téléportation avec un petit décalage Y pour ne pas être coincé dans le sol
+        DeplacerJoueur(lastCheckpointPos + Vector3.up * 0.5f, transform.rotation);
+    }
+
+    private void DeplacerJoueur(Vector3 nouvellePos, Quaternion nouvelleRot)
+    {
+        if (controller != null && controller.enabled)
+        {
+            controller.enabled = false; 
+            transform.position = nouvellePos;
+            transform.rotation = nouvelleRot;
             Physics.SyncTransforms();
             controller.enabled = true;
+        }
+        else
+        {
+            transform.position = nouvellePos;
         }
     }
 }

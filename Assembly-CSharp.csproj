@@ -61,6 +61,7 @@
     <Compile Include="Assets\Décor\Skybox\Low Poly\Scripts\DotParams\MoonParamsList.cs" />
     <Compile Include="Assets\Décor\Skybox\Low Poly\Demo\Standart\Scripts\UI\Buttons\PausetButton.cs" />
     <Compile Include="Assets\Samples\OpenXR Plugin\1.15.1\Controller XRInput\Scripts\PoseProvider_NameDevice.cs" />
+    <Compile Include="Assets\Scripts\ParcoursJeu\Parcours6.cs" />
     <Compile Include="Assets\Décor\Skybox\!Core\Scripts\DotParams\DotParam.cs" />
     <Compile Include="Assets\Décor\Skybox\Low Poly\Scripts\DotParams\SunParamsList.cs" />
     <Compile Include="Assets\Décor\Skybox\!Core\Scripts\Demo\UI\ColorPicker.cs" />
@@ -79,7 +80,6 @@
     <Compile Include="Assets\Décor\Skybox\!Core\Scripts\Helpers\Singleton.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Décor\Skybox\Low Poly\Scripts\DotParams\CelestialParamsList.cs" />
-    <Compile Include="Assets\Scripts\ParcoursJeu\Parcours2.cs" />
     <Compile Include="Assets\Samples\OpenXR Plugin\1.15.1\Controller XRInput\Scripts\TrackingModeOriginXRInput.cs" />
     <Compile Include="Assets\Samples\OpenXR Plugin\1.15.1\Controller XRInput\Scripts\ActionToButtonXRInputHand.cs" />
     <Compile Include="Assets\Décor\Skybox\!Core\Scripts\Demo\UI\BaseColorButton.cs" />
@@ -89,12 +89,14 @@
     <Compile Include="Assets\Décor\Skybox\Low Poly\Scripts\DotParams\StarsParamsList.cs" />
     <Compile Include="Assets\Scripts\Respawn.cs" />
     <Compile Include="Assets\Décor\Skybox\Low Poly\Demo\Standart\Scripts\Player\SmoothMouseLook.cs" />
+    <Compile Include="Assets\Scripts\ParcoursJeu\BalleParcours2.cs" />
     <Compile Include="Assets\Décor\Skybox\!Core\Scripts\Demo\CameraOrbitController.cs" />
     <Compile Include="Assets\Décor\Skybox\Low Poly\Scripts\Controllers\SkyboxCycleManager.cs" />
     <Compile Include="Assets\Décor\Skybox\Low Poly\Demo\Standart\Scripts\UI\Buttons\ColorButton.cs" />
     <Compile Include="Assets\Décor\Skybox\!Core\Scripts\DotParams\SortedParamsList.cs" />
     <Compile Include="Assets\Samples\OpenXR Plugin\1.15.1\Controller XRInput\Scripts\ActionToAxisXRInput.cs" />
     <Compile Include="Assets\Samples\OpenXR Plugin\1.15.1\Controller XRInput\Scripts\ActionToVisibilityXRInput.cs" />
+    <Compile Include="Assets\Scripts\ParcoursJeu\Parcours3.cs" />
     <Compile Include="Assets\Décor\Skybox\Low Poly\Scripts\DotParams\StarsParam.cs" />
     <Compile Include="Assets\Samples\OpenXR Plugin\1.15.1\Controller XRInput\Scripts\ActionToAxisXRInputHand.cs" />
     <Compile Include="Assets\Décor\Skybox\Low Poly\Demo\Standart\Scripts\UI\TimeText.cs" />
@@ -1428,11 +1430,11 @@
   <ItemGroup>
     <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.InteractionSimulator.Editor.csproj" />
     <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.Hands.Editor.csproj" />
+    <ProjectReference Include="Unity.XR.Hands.Samples.VisualizerSample.csproj" />
     <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.SpatialKeyboard.csproj" />
     <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.WorldSpaceUI.csproj" />
     <ProjectReference Include="Unity.XR.Hands.Samples.Gestures.Editor.csproj" />
     <ProjectReference Include="ControllerSample.csproj" />
-    <ProjectReference Include="Unity.XR.Hands.Samples.VisualizerSample.csproj" />
     <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.InteractionSimulator.csproj" />
     <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj" />
     <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.SpatialKeyboard.Editor.csproj" />

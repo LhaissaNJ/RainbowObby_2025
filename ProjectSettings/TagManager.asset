@@ -5,8 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Checkpoint
-  - Lave
   - Balle
+  - solLave
+  - Cible
   layers:
   - Default
   - TransparentFX
