@@ -8,6 +8,8 @@ TagManager:
   - Balle
   - solLave
   - Cible
+  - Plancher
+  - Joueur
   layers:
   - Default
   - TransparentFX

@@ -60,8 +60,8 @@
     <Compile Include="Assets\Samples\OpenXR Plugin\1.15.1\Controller XRInput\Scripts\ActionToHapticsXRInput.cs" />
     <Compile Include="Assets\Décor\Skybox\Low Poly\Scripts\DotParams\MoonParamsList.cs" />
     <Compile Include="Assets\Décor\Skybox\Low Poly\Demo\Standart\Scripts\UI\Buttons\PausetButton.cs" />
-    <Compile Include="Assets\Samples\OpenXR Plugin\1.15.1\Controller XRInput\Scripts\PoseProvider_NameDevice.cs" />
     <Compile Include="Assets\Scripts\ParcoursJeu\Parcours8.cs" />
+    <Compile Include="Assets\Samples\OpenXR Plugin\1.15.1\Controller XRInput\Scripts\PoseProvider_NameDevice.cs" />
     <Compile Include="Assets\Scripts\ParcoursJeu\Parcours6.cs" />
     <Compile Include="Assets\Décor\Skybox\!Core\Scripts\DotParams\DotParam.cs" />
     <Compile Include="Assets\Décor\Skybox\Low Poly\Scripts\DotParams\SunParamsList.cs" />
@@ -88,7 +88,6 @@
     <Compile Include="Assets\Décor\Skybox\Low Poly\Scripts\Controllers\SkyboxDayNightCycle.cs" />
     <Compile Include="Assets\Scripts\Checkpoints.cs" />
     <Compile Include="Assets\Décor\Skybox\Low Poly\Scripts\DotParams\StarsParamsList.cs" />
-    <Compile Include="Assets\Scripts\Respawn.cs" />
     <Compile Include="Assets\Décor\Skybox\Low Poly\Demo\Standart\Scripts\Player\SmoothMouseLook.cs" />
     <Compile Include="Assets\Scripts\ParcoursJeu\BalleParcours2.cs" />
     <Compile Include="Assets\Décor\Skybox\!Core\Scripts\Demo\CameraOrbitController.cs" />

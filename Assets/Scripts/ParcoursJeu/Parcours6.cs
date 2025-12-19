@@ -1,49 +1,65 @@
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit;
 
-public class Parcours6 : MonoBehaviour
+public class BalleParcours6 : MonoBehaviour
 {
-    [Header("UIs et Feedbacks")]
-    // public GameObject imageExplication; 
+    [Header("Configuration du Spawn")]
+    public Transform pointDeSpawn; 
 
-    [Header("Cible et Condition")]
-    public string nomDeLaPieceAttendue = "BonnePiece"; 
+    [Header("Configuration du Puzzle")]
+    public GameObject murDisparaitre; // Glisse le mur ici dans l'Inspector
 
-    [Header("Objets à faire disparaître")]
-    public GameObject murDisparaitre; 
-    public GameObject socleAFaireDisparaitre; 
+    private Rigidbody rb;
 
-    private bool socleCorrect = false;
-    private GameObject pieceRef;
-
-
-    public void OnSocleSelect(SelectEnterEventArgs args)
+    void Start()
     {
-        if (args.interactableObject.transform.name.Contains(nomDeLaPieceAttendue))
+        rb = GetComponent<Rigidbody>();
+    }
+
+    // --- SYSTÈME DE RESPAWN ---
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Plancher"))
         {
-            socleCorrect = true;
-            pieceRef = args.interactableObject.transform.gameObject;
-            
-            VerifierPuzzle();
+            ReplacerBalle();
         }
     }
 
-    public void OnSocleExit(SelectExitEventArgs args) 
-    { 
-        if (args.interactableObject.transform.name.Contains(nomDeLaPieceAttendue))
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Plancher") || other.name == "solLave")
         {
-            socleCorrect = false; 
-            pieceRef = null;
+            ReplacerBalle();
         }
     }
 
-    private void VerifierPuzzle()
+    public void ReplacerBalle()
     {
-        if (socleCorrect)
+        if (pointDeSpawn != null)
         {
-            if (murDisparaitre != null) murDisparaitre.SetActive(false);
-            if (pieceRef != null) pieceRef.SetActive(false);
-            if (socleAFaireDisparaitre != null) socleAFaireDisparaitre.SetActive(false);
+            transform.position = pointDeSpawn.position;
+
+            if (rb != null)
+            {
+                rb.linearVelocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
+            }
+        }
+    }
+
+    public void BallePoseeSurSocle()
+    {
+        if (murDisparaitre != null)
+        {
+            murDisparaitre.SetActive(false); 
+        }
+    }
+
+    public void BalleRetireeDuSocle()
+    {
+        if (murDisparaitre != null)
+        {
+            murDisparaitre.SetActive(true); 
         }
     }
 }
